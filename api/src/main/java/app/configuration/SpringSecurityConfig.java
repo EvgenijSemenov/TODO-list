@@ -24,4 +24,5 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/api/**").access("hasRole('USER')");
 
     }
+
 }
