@@ -55,4 +55,28 @@ public class Task {
         this.description = description;
     }
 
+    public LocalDateTime getDoneAtDate() {
+        return doneAtDate;
+    }
+
+    public void setDoneAtDate(LocalDateTime doneAtDate) {
+        this.doneAtDate = doneAtDate;
+    }
+
+    public LocalDateTime getDoneDate() {
+        return doneDate;
+    }
+
+    public void setDoneDate(LocalDateTime doneDate) {
+        this.doneDate = doneDate;
+    }
+
+    public TaskCategory getTaskCategory() {
+        return taskCategory;
+    }
+
+    public void setTaskCategory(TaskCategory taskCategory) {
+        this.taskCategory = taskCategory;
+    }
+
 }
