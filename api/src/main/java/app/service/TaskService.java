@@ -9,4 +9,11 @@ public interface TaskService {
     void saveTask(Task task);
 
     List<Task> findAllTask();
+
+    Task findById(int id);
+
+    void updateTask(Task task);
+
+    void deleteTaskById(int id);
+
 }
