@@ -18,7 +18,7 @@ public class TaskController {
     @Autowired
     TaskService taskService;
 
-    @RequestMapping(value = "/task/", method = RequestMethod.GET)
+    @RequestMapping(value = "/task", method = RequestMethod.GET)
     public ResponseEntity<List<Task>> listAllTask() {
 
         return new ResponseEntity<List<Task>>(taskService.findAllTask(), HttpStatus.OK);
