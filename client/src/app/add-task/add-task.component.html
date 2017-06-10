@@ -1,0 +1,39 @@
+<div class="row">
+	<div class="col-md-10 col-md-offset-1">
+		<div class="panel panel-default">
+			<div class="panel-heading"><h3 class="panel-title">Add task</h3></div>
+			<div class="panel-body">
+				<div class="col-md-12">
+					<div class="form-group">
+						<label for="description">Description</label>
+						<input type="text" class="form-control" id="description" required placeholder="Task description">
+					</div>		
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label for="categoty">Category</label>
+						<select name="categoty" class="form-control">
+							<option value="volvo">Volvo</option>
+							<option value="saab">Saab</option>
+							<option value="fiat">Fiat</option>
+							<option value="audi">Audi</option>
+						</select>
+					</div>	
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label for="doneAtDate">Done at date</label>
+						<my-date-picker name="doneAtDate" [options]="myDatePickerOptions"
+	                    		[(ngModel)]="model" required></my-date-picker>
+					</div>	
+				</div>
+				<div class="col-md-6">
+						<button type="button" class="btn btn-primary form-control">Add</button>
+				</div>
+				<div class="col-md-6">
+						<button type="button" class="btn btn-primary form-control">Clear</button>
+				</div>	
+			</div>
+		</div>
+	</div>
+</div>

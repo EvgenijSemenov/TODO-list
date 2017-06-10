@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { LoginComponentComponent } from './login-component/login-component.component';
 import { TodoListComponentComponent } from './todo-list-component/todo-list-component.component';
 import { TaskListComponent } from './task-list/task-list.component';
+import { AddTaskComponent } from './add-task/add-task.component';
+import { MyDatePickerModule } from 'mydatepicker';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,7 @@ import { TaskListComponent } from './task-list/task-list.component';
     LoginComponentComponent,
     TodoListComponentComponent,
     TaskListComponent,
+    AddTaskComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,12 @@ import { TaskListComponent } from './task-list/task-list.component';
         path: 'todo-list',
         component: TodoListComponentComponent
       },
+      {
+        path: 'add-task',
+        component: AddTaskComponent
+      }
     ]),
+    MyDatePickerModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
