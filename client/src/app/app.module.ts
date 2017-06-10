@@ -6,11 +6,13 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { LoginComponentComponent } from './login-component/login-component.component';
+import { TodoListComponentComponent } from './todo-list-component/todo-list-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponentComponent,
+    TodoListComponentComponent,
   ],
   imports: [
     BrowserModule,
@@ -21,6 +23,11 @@ import { LoginComponentComponent } from './login-component/login-component.compo
         path: '',
         component: LoginComponentComponent
       },
+      {
+        path: 'todo-list',
+        component: TodoListComponentComponent
+      },
+    ]),
   ],
   providers: [],
   bootstrap: [AppComponent]
