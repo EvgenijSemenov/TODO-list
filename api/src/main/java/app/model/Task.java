@@ -32,6 +32,10 @@ public class Task {
     @Column(name = "done_date")
     private LocalDateTime doneDate;
 
+    @ManyToOne
+    @JoinColumn(name = "category_id", referencedColumnName = "id")
+    private TaskCategory taskCategory;
+
     public Task() {
     }
 
