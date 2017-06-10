@@ -26,6 +26,12 @@ public class Task {
     @Type(type="app.hibernate.type.LocalDateTimeUserType")
     @Column(name = "done_at_date")
     private LocalDateTime doneAtDate;
+
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
+    @Type(type="app.hibernate.type.LocalDateTimeUserType")
+    @Column(name = "done_date")
+    private LocalDateTime doneDate;
+
     public Task() {
     }
 
