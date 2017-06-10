@@ -1,0 +1,48 @@
+<add-task></add-task>
+<div class="row">
+	<div *ngIf="inprogressTasks?.length > 0">
+		<div class="col-md-10 col-md-offset-1"><ins><h3>In progress</h3></ins></div>	
+		<div class="col-md-10 col-md-offset-1">
+			<ng-container *ngFor="let task of inprogressTasks">
+				<div class="panel panel-default">
+		  			<div class="panel-body">
+		  				<div class="row">
+		  					<div class="col-md-10">{{task.description}}</div>
+		  					<div class="col-md-2">
+		  						<div class="pull-right">
+		  							<a href="javascript:void(0)" title="Done" (click)="taskDone(task)"><span class="glyphicon glyphicon-ok"></span></a>	  						
+			  						<a href="javascript:void(0)" title="Edit"><span class="glyphicon glyphicon-pencil"></span></a>
+			  						<a href="javascript:void(0)" title="Delete" (click)="deleteTask(task)"><span class="glyphicon glyphicon glyphicon-trash"></span></a>
+		  						</div>
+		  					</div>
+		  					<div class="col-md-4"><strong>Category:</strong> {{task.category.name}}</div>
+		  					<div class="col-md-4"><strong>Done at:</strong> {{task.doneAtDate | date}}</div>
+		  				</div>
+		  			</div>
+				</div>
+			</ng-container> 
+		</div>
+	</div>
+	<div *ngIf="doneTasks?.length > 0">
+		<div class="col-md-10 col-md-offset-1"><ins><h3>Done</h3></ins></div>
+		<div class="col-md-10 col-md-offset-1">
+			<template ngFor let-task [ngForOf]="doneTasks">
+				<div class="panel panel-default">
+		  			<div class="panel-body">
+		  				<div class="row">
+		  					<div class="col-md-10">{{task.description}}</div>
+		  					<div class="col-md-2">
+		  						<div class="pull-right">
+		  							<a href="javascript:void(0)" title="In progress" (click)="taskInProgress(task)"><span class="glyphicon glyphicon-remove"></span></a>		  						
+		  						</div>
+		  					</div>
+		  					<div class="col-md-4"><strong>Category:</strong> {{task.category.name}}</div>
+		  					<div class="col-md-4"><strong>Done at:</strong> {{task.doneAtDate | date}}</div>
+		  					<div class="col-md-4"><strong>Done:</strong> {{task.doneDate | date}}</div>
+		  				</div>
+		  			</div>
+				</div>
+			</template> 
+		</div>
+	</div>
+</div>
