@@ -23,7 +23,7 @@ public class TaskCategoryImpl extends AbstractDao<Integer, TaskCategory> impleme
 
     @Override
     public TaskCategory findById(int id) {
-        return findById(id);
+        return getByKey(id);
     }
 
     @Override
