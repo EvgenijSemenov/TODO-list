@@ -1,7 +1,6 @@
 package app.service;
 
 import app.model.TaskCategory;
-
 import java.util.List;
 
 public interface TaskCategoryService {

@@ -4,7 +4,6 @@ import app.dao.TaskCategoryDao;
 import app.model.TaskCategory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import javax.transaction.Transactional;
 import java.util.List;
 

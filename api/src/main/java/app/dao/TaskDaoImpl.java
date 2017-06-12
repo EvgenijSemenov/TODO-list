@@ -3,10 +3,8 @@ package app.dao;
 import app.model.Task;
 import org.hibernate.Criteria;
 import org.hibernate.Query;
-import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
-
 import java.util.List;
 
 @Repository("taskDao")
@@ -34,7 +32,7 @@ public class TaskDaoImpl extends AbstractDao<Integer, Task> implements TaskDao {
 
     @Override
     public void deleteTaskById(int id) {
-        Query query = getSession().createSQLQuery("delete from Task where id = :id");
+        Query query = getSession().createSQLQuery("delete from TASK where id = :id");
         query.setInteger("id", id);
         query.executeUpdate();
     }

@@ -1,6 +1,5 @@
 package app.dao;
 
-import app.model.Task;
 import app.model.TaskCategory;
 
 import java.util.List;
