@@ -9,6 +9,7 @@ import java.util.List;
 
 @Repository("taskCategoryDao")
 public class TaskCategoryImpl extends AbstractDao<Integer, TaskCategory> implements TaskCategoryDao {
+
     @Override
     public void save(TaskCategory taskCategory) {
         persist(taskCategory);
@@ -32,4 +33,5 @@ public class TaskCategoryImpl extends AbstractDao<Integer, TaskCategory> impleme
         query.setInteger("id", id);
         query.executeUpdate();
     }
+
 }
