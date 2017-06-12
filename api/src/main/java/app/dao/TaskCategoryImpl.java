@@ -28,7 +28,7 @@ public class TaskCategoryImpl extends AbstractDao<Integer, TaskCategory> impleme
 
     @Override
     public void deleteById(int id) {
-        Query query = getSession().createSQLQuery("delete from TaskCategory where id = :id");
+        Query query = getSession().createSQLQuery("delete from TASK_CATEGORY where id = :id");
         query.setInteger("id", id);
         query.executeUpdate();
     }
