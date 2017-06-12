@@ -12,6 +12,9 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
+    private AuthenticationEntryPoint authEntryPoint;
+
+    @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication().withUser("User").password("secret").roles("USER");
     }
@@ -26,6 +29,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf()
                 .disable();
 
+                .authenticationEntryPoint(authEntryPoint);
     }
 
 }
