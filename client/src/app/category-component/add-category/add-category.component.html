@@ -1,0 +1,18 @@
+<div class="row">
+	<div class="col-md-10 col-md-offset-1">
+		<div class="panel panel-default">
+			<div class="panel-heading"><h3 class="panel-title">Add Category</h3></div>
+			<div class="panel-body">
+				<div class="col-md-12">
+					<div class="form-group">
+						<label for="description">Name</label>
+						<input type="text" class="form-control" id="description" [(ngModel)]="taskCategory.name">
+					</div>		
+				</div>
+				<div class="col-md-12">
+						<button type="button" class="btn btn-primary form-control" (click)="createTaskCategory()">Add</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
