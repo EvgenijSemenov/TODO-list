@@ -1,0 +1,33 @@
+<div class="row">
+	<div class="col-md-10 col-md-offset-1">
+		<div class="panel panel-default">
+			<div class="panel-heading"><h3 class="panel-title">Edit task</h3></div>
+			<div class="panel-body">
+				<div class="col-md-12">
+					<div class="form-group">
+						<label for="description">Description</label>
+						<input type="text" class="form-control" id="description" [(ngModel)]="task.description">
+					</div>		
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label for="category">Category</label>
+						<select name="category" class="form-control" [(ngModel)]="task.taskCategory">
+							<option *ngFor="let taskCategory of taskCategories" [ngValue]="taskCategory">{{ taskCategory.name }}</option>
+						</select>
+					</div>	
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label for="doneAtDate">Done at date</label>
+						<my-date-picker name="doneAtDate" [options]="myDatePickerOptions"
+	                    		[(ngModel)]="model" required></my-date-picker>
+					</div>	
+				</div>
+				<div class="col-md-12">
+						<button type="button" class="btn btn-primary form-control" (click)="updateTask()">Save</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
