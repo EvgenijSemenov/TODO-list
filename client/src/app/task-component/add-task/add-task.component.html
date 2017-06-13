@@ -6,17 +6,14 @@
 				<div class="col-md-12">
 					<div class="form-group">
 						<label for="description">Description</label>
-						<input type="text" class="form-control" id="description" required placeholder="Task description">
+						<input type="text" class="form-control" id="description" [(ngModel)]="task.description">
 					</div>		
 				</div>
 				<div class="col-md-6">
 					<div class="form-group">
-						<label for="categoty">Category</label>
-						<select name="categoty" class="form-control">
-							<option value="volvo">Volvo</option>
-							<option value="saab">Saab</option>
-							<option value="fiat">Fiat</option>
-							<option value="audi">Audi</option>
+						<label for="category">Category</label>
+						<select name="category" class="form-control" [(ngModel)]="task.taskCategory">
+							<option *ngFor="let taskCategory of taskCategories" [ngValue]="taskCategory">{{ taskCategory.name }}</option>
 						</select>
 					</div>	
 				</div>
@@ -27,12 +24,9 @@
 	                    		[(ngModel)]="model" required></my-date-picker>
 					</div>	
 				</div>
-				<div class="col-md-6">
-						<button type="button" class="btn btn-primary form-control">Add</button>
+				<div class="col-md-12">
+						<button type="button" class="btn btn-primary form-control" (click)="createTask()">Add</button>
 				</div>
-				<div class="col-md-6">
-						<button type="button" class="btn btn-primary form-control">Clear</button>
-				</div>	
 			</div>
 		</div>
 	</div>
