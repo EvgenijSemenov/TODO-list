@@ -1,4 +1,4 @@
-<add-task></add-task>
+<add-task (createTask$)="ngOnInit()"></add-task>
 <div class="row">
 	<div *ngIf="inprogressTasks?.length > 0">
 		<div class="col-md-10 col-md-offset-1"><ins><h3>In progress</h3></ins></div>	
@@ -11,11 +11,11 @@
 		  					<div class="col-md-2">
 		  						<div class="pull-right">
 		  							<a href="javascript:void(0)" title="Done" (click)="taskDone(task)"><span class="glyphicon glyphicon-ok"></span></a>	  						
-			  						<a href="javascript:void(0)" title="Edit"><span class="glyphicon glyphicon-pencil"></span></a>
+			  						<a href="javascript:void(0)" title="Edit" (click)="editTask(task)"><span class="glyphicon glyphicon-pencil"></span></a>
 			  						<a href="javascript:void(0)" title="Delete" (click)="deleteTask(task)"><span class="glyphicon glyphicon glyphicon-trash"></span></a>
 		  						</div>
 		  					</div>
-		  					<div class="col-md-4"><strong>Category:</strong> {{task.category.name}}</div>
+		  					<div class="col-md-4"><strong>Category: </strong>{{task.taskCategory?.name ? task.taskCategory.name : 'Default'}}</div>
 		  					<div class="col-md-4"><strong>Done at:</strong> {{task.doneAtDate | date}}</div>
 		  				</div>
 		  			</div>
@@ -24,7 +24,7 @@
 		</div>
 	</div>
 	<div *ngIf="doneTasks?.length > 0">
-		<div class="col-md-10 col-md-offset-1"><ins><h3>Done</h3></ins></div>
+		<div class="col-md-10 col-md-offset-1"><ins><h3>Done</h3></ins></div>	
 		<div class="col-md-10 col-md-offset-1">
 			<template ngFor let-task [ngForOf]="doneTasks">
 				<div class="panel panel-default">
@@ -36,7 +36,7 @@
 		  							<a href="javascript:void(0)" title="In progress" (click)="taskInProgress(task)"><span class="glyphicon glyphicon-remove"></span></a>		  						
 		  						</div>
 		  					</div>
-		  					<div class="col-md-4"><strong>Category:</strong> {{task.category.name}}</div>
+		  					<div class="col-md-4"><strong>Category: </strong>{{task.taskCategory?.name ? task.taskCategory.name : 'Default'}}</div>
 		  					<div class="col-md-4"><strong>Done at:</strong> {{task.doneAtDate | date}}</div>
 		  					<div class="col-md-4"><strong>Done:</strong> {{task.doneDate | date}}</div>
 		  				</div>
