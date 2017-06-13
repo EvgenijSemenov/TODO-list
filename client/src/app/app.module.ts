@@ -5,19 +5,30 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { LoginComponentComponent } from './login-component/login-component.component';
-import { TodoListComponentComponent } from './todo-list-component/todo-list-component.component';
-import { TaskListComponent } from './task-list/task-list.component';
-import { AddTaskComponent } from './add-task/add-task.component';
+import { LoginComponent } from './login-component/login/login.component';
+import { TaskComponent } from './task-component/task/task.component';
+import { TaskListComponent } from './task-component/task-list/task-list.component';
+import { AddTaskComponent } from './task-component/add-task/add-task.component';
 import { MyDatePickerModule } from 'mydatepicker';
+import { LoginService } from './service/login.service';
+import { TaskService } from './service/task.service';
+import { TaskCategoryService } from './service/task-category.service';
+import { TopMenuComponent } from './top-menu/top-menu.component';
+import { CategoryListComponent } from './category-component/category-list/category-list.component';
+import { AddCategoryComponent } from './category-component/add-category/add-category.component';
+import { EditTaskComponent } from './task-component/edit-task/edit-task.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponentComponent,
-    TodoListComponentComponent,
+    LoginComponent,
+    TaskComponent,
     TaskListComponent,
-    AddTaskComponent
+    AddTaskComponent,
+    TopMenuComponent,
+    CategoryListComponent,
+    AddCategoryComponent,
+    EditTaskComponent
   ],
   imports: [
     BrowserModule,
@@ -26,20 +37,33 @@ import { MyDatePickerModule } from 'mydatepicker';
     RouterModule.forRoot([
       {
         path: '',
-        component: LoginComponentComponent
+        component: LoginComponent
       },
       {
         path: 'todo-list',
-        component: TodoListComponentComponent
+        component: TaskComponent
       },
       {
         path: 'add-task',
         component: AddTaskComponent
+      },
+      {
+        path: 'edit-task/:id',
+        component: EditTaskComponent
+      },
+      {
+        path: 'add-category',
+        component: AddCategoryComponent
       }
     ]),
     MyDatePickerModule 
   ],
-  providers: [],
+  providers: [
+    LoginService,
+    TaskService,
+    TaskCategoryService
+  ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
